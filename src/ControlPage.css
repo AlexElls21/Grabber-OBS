@@ -1,0 +1,13 @@
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  zoom: 0.5; /* Adjust zoom level as needed */
+}
+
+.iframe-content {
+  width: 1920px;
+  height: 1080px;
+  border: none;
+}

@@ -1,12 +1,17 @@
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ControlPage from "./ControlPage";
+import DisplayPage from "./DisplayPage";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>THIS IS A TEST</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ControlPage />} />
+        <Route path="/display" element={<DisplayPage />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars */
+  width: 1920px; /* Ensure fixed width */
+  height: 1080px; /* Ensure fixed height */
+  position: relative; /* Ensure elements stay within bounds */
+}
+
+.display-page {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden; /* Prevent scrollbars for the container */
+  position: relative;
+}
