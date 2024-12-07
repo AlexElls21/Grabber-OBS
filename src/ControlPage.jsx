@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const GIPHY_API_KEY = "bhPW4fBuqajABoZNUhQ4yUfCcv1lA3Uz";
-const WS_URL = "ws://localhost:8080";
-
+const GIPHY_API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
+const WS_URL = process.env.REACT_APP_WS_URL;
+console.log("here ", GIPHY_API_KEY);
 const fontSizes = Array.from({ length: 101 }, (_, i) => i + 50);
 const fontFamilies = [
   "Arial",
@@ -39,8 +39,8 @@ const ControlPage = () => {
   const [giphyOffset, setGiphyOffset] = useState(0); // Offset for pagination
   const [socket, setSocket] = useState(null);
 
-  const TWITCH_CLIENT_ID = "lrmlgcq2b4ypxd0817mbbnxrtf9esl"; // Replace with your Twitch Client ID
-  const TWITCH_REDIRECT_URI = "http://localhost:3000"; // Replace with your Redirect URI
+  const TWITCH_CLIENT_ID = process.env.REACT_APP_TWITCH_CLIENT_ID; // Replace with your Twitch Client ID
+  const TWITCH_REDIRECT_URI = process.env.REACT_APP_TWITCH_REDIRECT_URI; // Replace with your Redirect URI
 
   // State for authentication
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -54,6 +54,7 @@ const ControlPage = () => {
     if (accessToken) {
       authenticateUser(accessToken);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log(userInfo);

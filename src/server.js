@@ -1,7 +1,10 @@
 const WebSocket = require("ws");
+require("dotenv").config();
+
+const portNum = process.env.PORT || 8080;
 
 // Create a WebSocket server on port 8080
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocket.Server({ port: portNum });
 
 // Broadcast a message to all connected clients
 const broadcast = (data) => {
@@ -57,4 +60,4 @@ setInterval(() => {
   });
 }, 30000); // Ping every 30 seconds
 
-console.log("WebSocket server running on ws://localhost:8080");
+console.log(`WebSocket server running on ws://localhost:${portNum}`);
